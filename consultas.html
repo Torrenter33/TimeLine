@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Banner en la cabecera -->
+    <header class="banner">
+        <img src="images/banner.jpg" alt="Banner de la Página" class="banner-image">
+    </header>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trajes.html">Trajes</a></li>
+                <li><a href="coches.html">Coches</a></li>
+                <li><a href="villanos.html">Villanos</a></li>
+                <li><a href="aliados.html">Aliados</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Consultas</h1>
+        <p>Si tienes alguna consulta, puedes escribirnos a través de este formulario:</p>
+        <form action="submit_query.php" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="query">Consulta:</label>
+            <textarea id="query" name="query" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+
+</html>

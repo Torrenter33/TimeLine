@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #c8c2c2;
+    margin-top: 50px; /* Corregido */
+}
+
+.timeline {
+    position: relative;
+    margin: 150px auto;
+    width: 98%;
+    max-width: 2200px;
+    border-top: 2px solid #000;
+    z-index: 0;
+}
+
+.timeline::before,
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline::before {
+    left: -10px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #000 transparent transparent;
+}
+
+.timeline::after {
+    right: -10px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #000;
+}
+
+.timeline-decade {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: 1;
+}
+
+.timeline-decade:hover {
+    background-color: #555;
+}
+
+.timeline-decade.active-decade {
+    background-color: #3487cb;
+    box-shadow: 0 0 15px rgba(90, 165, 240, 0.8);
+}
+
+.year-panel {
+    display: none;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50px) scale(0.95);
+    width: 90%;
+    background-color: #7c7b7b;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    max-height: 150px;
+    overflow-y: auto;
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.year-panel.active {
+    display: block;
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+}
+
+.timeline-year {
+    margin: 5px 20px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 30px;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline-year:hover {
+    background-color: #444;
+}
+
+.timeline-year.active-year {
+    background-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+}
+
+.month-panel {
+    display: none;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50px) scale(0.95);
+    width: 90%;
+    background-color: #4f4f53;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    max-height: 150px;
+    overflow-y: auto;
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.month-panel.active {
+    display: block;
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+}
+
+.timeline-month {
+    margin: 5px 15px;
+    display: inline-flex;
+    width: 64px;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline-month:hover {
+    background-color: #666;
+}
+
+.timeline-month.active-month {
+    background-color: #e047e0;
+    box-shadow: 0 0 10px rgba(232, 69, 164, 0.8);
+}
+
+.content .month-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    margin-top: 150px;
+    padding: 10px;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Eliminar márgenes y rellenos predeterminados */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que el banner no tenga márgenes ni rellenos */
+.banner {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que la imagen no tenga márgenes ni espacios adicionales */
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
